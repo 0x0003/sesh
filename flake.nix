@@ -14,8 +14,8 @@
           pkgs = nixpkgsFor.${system};
         in
         {
-          go-hello = pkgs.buildGoModule {
-            pname = "sesh-test";
+          sesh_custom = pkgs.buildGoModule {
+            pname = "sesh";
             inherit version;
             src = ./.;
             vendorHash = "sha256-zt1/gE4bVj+3yr9n0kT2FMYMEmiooy3k1lQ77rN6sTk=";
@@ -30,6 +30,6 @@
             buildInputs = with pkgs; [ go gopls gotools go-tools ];
           };
         });
-      defaultPackage = forAllSystems (system: self.packages.${system}.go-hello);
+      defaultPackage = forAllSystems (system: self.packages.${system}.sesh_custom);
     };
 }
