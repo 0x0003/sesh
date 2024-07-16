@@ -14,7 +14,7 @@
           pkgs = nixpkgsFor.${system};
         in
         {
-          go-hello = pkgs.buildGoModule {
+          sesh_custom = pkgs.buildGoModule {
             pname = "sesh";
             inherit version;
             src = ./.;
@@ -30,6 +30,6 @@
             buildInputs = with pkgs; [ go gopls gotools go-tools ];
           };
         });
-      defaultPackage = forAllSystems (system: self.packages.${system}.go-hello);
+      defaultPackage = forAllSystems (system: self.packages.${system}.sesh_custom);
     };
 }
