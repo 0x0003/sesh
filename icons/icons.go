@@ -8,8 +8,8 @@ import (
 
 // TODO: add to config to allow for custom icons
 var (
-	ZoxideIcon string = ""
-	TmuxIcon   string = ""
+	ZoxideIcon string = ""
+	TmuxIcon   string = "󱘖"
 	ConfigIcon string = ""
 )
 
@@ -19,14 +19,14 @@ func ansiString(code int, s string) string {
 
 func PrintWithIcon(s session.Session) string {
 	icon := ZoxideIcon
-	colorCode := 36 // cyan
+	colorCode := 94 // brblue
 	if s.Src == "tmux" {
 		icon = TmuxIcon
-		colorCode = 34 // blue
+		colorCode = 92 // brgreen
 	}
 	if s.Src == "config" {
 		icon = ConfigIcon
-		colorCode = 90 // gray
+		colorCode = 97 // brwhite
 	}
 	return fmt.Sprintf("%s %s", ansiString(colorCode, icon), s.Name)
 }
