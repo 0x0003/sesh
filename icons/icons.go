@@ -9,7 +9,7 @@ import (
 // TODO: add to config to allow for custom icons
 var (
 	ZoxideIcon string = ""
-	TmuxIcon   string = "󱘖"
+	TmuxIcon   string = ""
 	ConfigIcon string = ""
 )
 
