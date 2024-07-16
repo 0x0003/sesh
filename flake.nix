@@ -15,7 +15,7 @@
         in
         {
           go-hello = pkgs.buildGoModule {
-            pname = "sesh-test";
+            pname = "sesh";
             inherit version;
             src = ./.;
             vendorHash = "sha256-zt1/gE4bVj+3yr9n0kT2FMYMEmiooy3k1lQ77rN6sTk=";
